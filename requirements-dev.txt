@@ -48,7 +48,7 @@ pycparser==2.22
 pydantic==2.11.3
 pydantic-core==2.33.1
 pygments==2.19.1
-pyopenjtalk @ git+https://github.com/VOICEVOX/pyopenjtalk@74703b034dd90a1f199f49bb70bf3b66b1728a86
+pyopenjtalk-agpl3
 pyparsing==3.2.3
 pytest==8.3.5
 python-multipart==0.0.20
