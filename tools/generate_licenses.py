@@ -71,6 +71,9 @@ def generate_licenses() -> list[License]:
         if license_json["LicenseText"] == "UNKNOWN":
             if package_name == "core" and license_json["Version"] == "0.0.0":
                 continue
+            elif package_name == "sudachipy":
+                text_url = "https://raw.githubusercontent.com/WorksApplications/sudachi.rs/master/LICENSE"  # noqa: B950
+                license_json["LicenseText"] = get_license_text(text_url)
             elif package_name == "future":
                 text_url = "https://raw.githubusercontent.com/PythonCharmers/python-future/master/LICENSE.txt"  # noqa: B950
                 license_json["LicenseText"] = get_license_text(text_url)
