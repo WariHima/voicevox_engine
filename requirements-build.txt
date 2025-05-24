@@ -4,13 +4,16 @@ anyio==4.9.0
 cffi==1.17.1
 click==8.1.8
 colorama==0.4.6 ; sys_platform == 'win32'
+docopt==0.6.2
+e2k==0.6.2
 fastapi-slim==0.115.12
 h11==0.14.0
 idna==3.10
+jaconv==0.4.0
 jinja2==3.1.6
 macholib==1.16.3 ; sys_platform == 'darwin'
 markupsafe==3.0.2
-pyopenjtalk-agpl3==1.0.1
+num2words==0.5.14
 numpy==2.2.4
 packaging==24.2
 pefile==2024.8.26 ; sys_platform == 'win32'
@@ -20,6 +23,7 @@ pydantic==2.11.3
 pydantic-core==2.33.1
 pyinstaller==5.13.2
 pyinstaller-hooks-contrib==2025.2
+pyopenjtalk-agpl3==1.0.1
 python-multipart==0.0.20
 pywin32-ctypes==0.2.3 ; sys_platform == 'win32'
 pyworld==0.3.5
@@ -30,7 +34,8 @@ sniffio==1.3.1
 soundfile==0.13.1
 soxr==0.5.0.post1
 starlette==0.45.3
-tqdm==4.67.1
+sudachidict-core==20250515
+sudachipy==0.6.10
 typing-extensions==4.13.2
 typing-inspection==0.4.0
 uvicorn==0.34.0
