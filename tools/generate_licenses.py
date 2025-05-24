@@ -101,10 +101,14 @@ def _update_licenses(pip_licenses: list[_PipLicense]) -> list[_License]:
         package_name = pip_license.Name.lower()
 
         # ライセンス文が pip から取得できていない場合、pip 外から補う
-        if pip_license.LicenseText == "UNKNOWN":
+        if pip_license.LicenseText == "UNKNOWN":    
             if package_name not in package_to_license_url:
-                # ライセンスがpypiに無い
-                raise Exception(f"No License info provided for {package_name}")
+                if package_name == "sudachipy":
+                    continue
+                else:
+                   # ライセンスがpypiに無い
+                    raise Exception(f"No License info provided for {package_name}")
+  
             text_url = package_to_license_url[package_name]
             pip_license.LicenseText = _get_license_text(text_url)
 
@@ -155,6 +159,13 @@ def _add_licenses_manually(licenses: list[_License]) -> None:
             license_name="Modified BSD license",
             license_text="tools/licenses/open_jtalk/COPYING",
             license_text_type="local_address",
+        ),
+        _License(
+            package_name="sudachi.rs",
+            package_version="1.11",
+            license_name="Apache 2.0 license",
+            license_text="https://raw.githubusercontent.com/WorksApplications/sudachi.rs/develop/LICENSE",
+            license_text_type="remote_address",
         ),
         _License(
             package_name="MeCab",

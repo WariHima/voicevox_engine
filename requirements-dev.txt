@@ -34,7 +34,6 @@ mypy==1.15.0
 mypy-extensions==1.0.0
 nodeenv==1.9.1
 num2words==0.5.14
-numpy==2.2.4
 packageurl-python==0.16.0
 packaging==24.2
 pip==25.0.1
@@ -80,3 +79,4 @@ urllib3==2.4.0
 uvicorn==0.34.0
 virtualenv==20.30.0
 wcwidth==0.2.13
+numpy==1.26.4

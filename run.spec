@@ -9,6 +9,7 @@ datas = [
     ('licenses.json', '.'),
 ]
 datas += collect_data_files('pyopenjtalk')
+datas += collect_data_files('e2k')
 
 core_model_dir_path = os.environ.get('CORE_MODEL_DIR_PATH')
 if core_model_dir_path:
@@ -43,7 +44,18 @@ a = Analysis(
     pathex=[],
     binaries=[],
     datas=datas,
-    hiddenimports=["e2k.modelse2k.models"],
+    hiddenimports=[
+        # NumPy 2.x で生成した Pickle を含む .npy/.npz ファイルを NumPy 1.x で読み込むために必要
+        # numpy._core 以下のダミーモジュールを明示的に hiddenimports に追加しないと ModuleNotFoundError が発生する
+        # ref: https://github.com/numpy/numpy/issues/24844
+        'numpy._core',
+        'numpy._core._dtype_ctypes',
+        'numpy._core._dtype',
+        'numpy._core._internal',
+        'numpy._core._multiarray_umath',
+        'numpy._core.multiarray',
+        'numpy._core.umath',
+    ],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
